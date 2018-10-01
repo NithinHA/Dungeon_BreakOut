@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 6cf0df2ab4670b141933fe937a5d6062
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - player_death_effect: {instanceID: 0}
+  - enemy_death_effect: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
