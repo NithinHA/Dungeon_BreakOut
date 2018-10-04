@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1307728002826530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.5, y: 4.5, z: 0}
+  m_LocalPosition: {x: -19.5, y: 19.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -65,7 +65,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.39607844, y: 1.0039216}
+  m_Size: {x: 0.39607844, y: 0.9010629}
   m_EdgeRadius: 0
 --- !u!114 &114436025694998400
 MonoBehaviour:
@@ -80,6 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_death_effect: {fileID: 1116515904653296, guid: 79a04578826d66040972d0805534a7f2,
     type: 2}
+  gm: {fileID: 0}
 --- !u!212 &212986252821768210
 SpriteRenderer:
   m_ObjectHideFlags: 1

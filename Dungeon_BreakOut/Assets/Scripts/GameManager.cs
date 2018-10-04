@@ -13,7 +13,10 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	void Update () {
-		
+		if (Input.GetKeyDown(KeyCode.R))		//Press 'R' to restart the game.
+		{
+			Restart();
+		}
 	}
 
 	public void StarCollected()
@@ -43,5 +46,10 @@ public class GameManager : MonoBehaviour {
 	public void MainMenu()
 	{
 		SceneManager.LoadScene(0);
+	}
+
+	public void QuitGame()
+	{
+		Application.Quit();
 	}
 }

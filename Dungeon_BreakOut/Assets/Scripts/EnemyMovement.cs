@@ -31,6 +31,8 @@ public class EnemyMovement : EnemyScript {
 	{
 		if (collision.gameObject.CompareTag("Player"))
 		{
+			collision.gameObject.tag = "Untagged";		//this is done in order to avoid any other collision to player
+
 			Instantiate(enemy_death_effect, transform.position, Quaternion.identity);
 			
 			base.Player_Collision(collision.gameObject);		//calls the parent class method
