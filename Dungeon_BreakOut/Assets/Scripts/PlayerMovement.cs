@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -49,6 +50,31 @@ public class PlayerMovement : MonoBehaviour {
 
 			if (!is_moving)
 			{
+				//StreamReader reader = new StreamReader("C:/Users/Public/Documents/Unity Projects/Dungeon_BreakOut/input.txt");
+				//string s = reader.ReadLine();
+				//if (s == "left")
+				//{
+				//	x_dir = -1;
+				//	player_model.rotation = Quaternion.Euler(0, 0, -90);
+				//}
+				//else if (s == "right")
+				//{
+				//	x_dir = 1;
+				//	player_model.rotation = Quaternion.Euler(0, 0, 90);
+				//}
+				//else if (s == "up")
+				//{
+				//	y_dir = 1;
+				//	player_model.rotation = Quaternion.Euler(0, 0, 180);
+				//}
+				//else if (s == "down")
+				//{
+				//	y_dir = -1;
+				//	player_model.rotation = Quaternion.Euler(0, 0, 0);
+				//}
+
+
+
 				if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
 				{
 					y_dir = 1;
@@ -74,6 +100,7 @@ public class PlayerMovement : MonoBehaviour {
 				move_velocity = movement_input.normalized * speed;
 
 				is_moving = true;
+				//reader.Close();
 			}
 		}
 	}

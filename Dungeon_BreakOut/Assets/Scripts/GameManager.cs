@@ -13,10 +13,7 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.R))		//Press 'R' to restart the game.
-		{
-			Restart();
-		}
+		
 	}
 
 	public void StarCollected()
@@ -35,16 +32,19 @@ public class GameManager : MonoBehaviour {
 	}
 	public void Restart()           //this is the common restart function used for restarting after player dies or player wins.
 	{
+		FinishScript.is_level_complete = false;
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 
 	public void NextLevel()
 	{
+		FinishScript.is_level_complete = false;
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
 
 	public void MainMenu()
 	{
+		FinishScript.is_level_complete = false;
 		SceneManager.LoadScene(0);
 	}
 
