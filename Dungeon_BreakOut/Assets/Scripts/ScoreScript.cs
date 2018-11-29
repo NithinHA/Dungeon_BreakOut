@@ -40,6 +40,8 @@ public class ScoreScript : MonoBehaviour {
 	{
 		if (collision.gameObject.CompareTag("Player"))
 		{
+			FindObjectOfType<AudioManager>().Play("CoinCollect");
+
 			Instantiate(star_particles, transform.position, Quaternion.identity);
 			Destroy(gameObject);
 			gm.StarCollected();

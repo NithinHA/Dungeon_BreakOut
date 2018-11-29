@@ -31,6 +31,10 @@ public class PlayerMovement : MonoBehaviour {
 				player_model.localScale = Vector2.one;      //when player comes to rest, reset player's localscale
 
 				if (!display_effect) {
+					AudioSource audio = GetComponent<AudioSource>();
+					audio.pitch = Random.Range(1f, 2f);
+					audio.Play();
+
 					Transform feet = player_model.GetChild(0);
 					GameObject effect = Instantiate(movement_effect, player_model);		//this used to be most confusing part. But glad it worked somehow :P
 					effect.transform.position = feet.position;
@@ -106,6 +110,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	private void FixedUpdate() {
-		rb.velocity = move_velocity * Time.deltaTime;
+		if(!FinishScript.is_level_complete)
+			rb.velocity = move_velocity * Time.deltaTime;
 	}
 }

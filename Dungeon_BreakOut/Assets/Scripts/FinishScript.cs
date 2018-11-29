@@ -22,6 +22,9 @@ public class FinishScript : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D collision) {
 		if (collision.gameObject.CompareTag("Player")) {
+
+			FindObjectOfType<AudioManager>().Play("WinAudio");
+
 			is_level_complete = true;
 			win_text.text = "<b>LEVEL\nCOMPLETE</b>\n\nScore: " + gm.stars_count + "/5";
 			complete_level_UI.SetActive(true);
