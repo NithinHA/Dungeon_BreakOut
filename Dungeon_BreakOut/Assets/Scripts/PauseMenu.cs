@@ -9,6 +9,9 @@ public class PauseMenu : MonoBehaviour {
 
 	public static bool is_paused = false;
 
+	public GameObject pause_button;
+	public GameObject joystick;
+
 	void Start () {
 		
 	}
@@ -24,6 +27,13 @@ public class PauseMenu : MonoBehaviour {
 		}
 	}
 
+	public void PauseButtonClick()
+	{
+		joystick.SetActive(false);
+		pause_button.SetActive(false);
+		Pause();
+	}
+
 	void Pause()
 	{
 		pause_UI.SetActive(true);
@@ -36,6 +46,9 @@ public class PauseMenu : MonoBehaviour {
 		pause_UI.SetActive(false);
 		Time.timeScale = 1;
 		is_paused = false;
+
+		joystick.SetActive(true);
+		pause_button.SetActive(true);
 	}
 
 	public void Retry()

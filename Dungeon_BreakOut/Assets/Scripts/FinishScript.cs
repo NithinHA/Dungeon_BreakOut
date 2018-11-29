@@ -12,6 +12,9 @@ public class FinishScript : MonoBehaviour {
 	public GameObject complete_level_UI;
 	public TextMeshProUGUI win_text;
 
+	public GameObject joystick;
+	public GameObject pause_button;
+
 	void Start () {
 		
 	}
@@ -24,6 +27,9 @@ public class FinishScript : MonoBehaviour {
 		if (collision.gameObject.CompareTag("Player")) {
 
 			FindObjectOfType<AudioManager>().Play("WinAudio");
+
+			joystick.SetActive(false);
+			pause_button.SetActive(false);
 
 			is_level_complete = true;
 			win_text.text = "<b>LEVEL\nCOMPLETE</b>\n\nScore: " + gm.stars_count + "/5";

@@ -425,6 +425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 500
   is_moving: 0
+  joystick: {fileID: 0}
   movement_effect: {fileID: 1532073187545482, guid: 405b9de3699cab04aa3fb21fb3f5762f,
     type: 2}
 --- !u!212 &212898061756867004

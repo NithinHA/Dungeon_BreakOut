@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour {
 	public float speed;
 	public bool is_moving = false;
 	float x_dir, y_dir;
+	float horizontal_move;
+	float vertical_move;
+	public Joystick joystick;
 
 	public GameObject movement_effect;
 	bool display_effect = true;
@@ -54,6 +57,7 @@ public class PlayerMovement : MonoBehaviour {
 
 			if (!is_moving)
 			{
+				////////Reading input from text files//////////
 				//StreamReader reader = new StreamReader("C:/Users/Public/Documents/Unity Projects/Dungeon_BreakOut/input.txt");
 				//string s = reader.ReadLine();
 				//if (s == "left")
@@ -77,33 +81,47 @@ public class PlayerMovement : MonoBehaviour {
 				//	player_model.rotation = Quaternion.Euler(0, 0, 0);
 				//}
 
+				//////////Android joystick input///////////
+				if (joystick.Horizontal > 0.5f || joystick.Horizontal < -0.5f)
+					horizontal_move = joystick.Horizontal;
+				else
+					horizontal_move = 0;
+				if (joystick.Vertical > 0.5f || joystick.Vertical < -0.5f)
+					vertical_move = joystick.Vertical;
+				else
+					vertical_move = 0;
 
+				//////////Keyboard input///////////
+				//horizontal_move = Input.GetAxisRaw("Horizontal");
+				//vertical_move = Input.GetAxisRaw("Vertical");
 
-				if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+				if (/*Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)*/ vertical_move > 0)
 				{
 					y_dir = 1;
 					player_model.rotation = Quaternion.Euler(0, 0, 180);
 				}
-				else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+				else if (/*Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)*/ vertical_move < 0)
 				{
 					y_dir = -1;
 					player_model.rotation = Quaternion.Euler(0, 0, 0);
 				}
-				else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-				{
-					x_dir = -1;
-					player_model.rotation = Quaternion.Euler(0, 0, -90);
-				}
-				else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+				else if (/*Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)*/ horizontal_move > 0)
 				{
 					x_dir = 1;
 					player_model.rotation = Quaternion.Euler(0, 0, 90);
+				}
+				else if (/*Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)*/ horizontal_move < 0)
+				{
+					x_dir = -1;
+					player_model.rotation = Quaternion.Euler(0, 0, -90);
 				}
 
 				Vector2 movement_input = new Vector2(x_dir, y_dir);
 				move_velocity = movement_input.normalized * speed;
 
 				is_moving = true;
+
+
 				//reader.Close();
 			}
 		}

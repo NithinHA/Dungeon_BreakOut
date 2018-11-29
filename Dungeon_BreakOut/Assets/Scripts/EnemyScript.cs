@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour {
 
 	public GameObject player_death_effect;
+	[HideInInspector]
 	public GameManager gm;
 
 	void Awake () {

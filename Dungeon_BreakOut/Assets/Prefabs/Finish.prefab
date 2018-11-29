@@ -81,6 +81,7 @@ MonoBehaviour:
   gm: {fileID: 0}
   complete_level_UI: {fileID: 0}
   win_text: {fileID: 0}
+  joystick: {fileID: 0}
 --- !u!212 &212451823038978528
 SpriteRenderer:
   m_ObjectHideFlags: 1
